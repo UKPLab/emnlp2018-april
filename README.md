@@ -40,16 +40,16 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 
 
 # System Overview
-APRIL is an interactive document summarisation framework. Instead of learning from reference summaries, APRIL interacts with the users/oracles to obtain preferences, learns a ranking over all summaries from the preferences, and generates optimal summaries with respect to the learnt ranking.
+APRIL is an interactive document summarisation framework. Instead of learning from reference summaries, APRIL interacts with the users/oracles to obtain preferences, learns a ranking over all summaries from the preferences, and generates (near-)optimal summaries with respect to the learnt ranking.
 
 APRIL has three stages:
-* sample summaries (stage0): randomly generate some summaries and compute their rouge scores
-* active preference learning (stage1): actively query the orale for multiple rounds, collect preferences and learn a ranking over summaries from the preferences.
-* reinforcement learning (stage2): read the ranking learnt in stage1 and generate the highest-ranked summary
+* Sample summaries (stage0): randomly generate some summaries and compute their rouge scores. The ROUGE scores are used to simulate users' preferences
+* Active preference learning (stage1): actively query the oracle for multiple rounds, collect preferences and learn a ranking over summaries from the preferences.
+* Reinforcement learning (stage2): read the ranking learnt in stage1 and generate the highest-ranked summary
 
 
 ## Prerequisties
-* We suggest you to use IDEs like PyCharm to set up this project, so that package paths are managed automatically.
+* We suggest you to use IDEs like PyCharm to set up this project, so that the package paths are managed automatically.
 * Python3 (tested with Python 3.6 on Ubuntu 16.04 LTS)
 * Install all packages in requirement.txt.
 
@@ -67,7 +67,7 @@ and put them to summariser/jars
 
 
 ## Download and Preprocess data
-* Download the DUC01/02/04 data from [the DUC website](https://duc.nist.gov/data.html) and extract the data to folder data.
+* Download the DUC01/02/04 data from [the DUC website](https://duc.nist.gov/data.html) and extract the data to folder 'data/'.
 * Run summariser/data_processer/make_data.py. Each run preprocesses one dataset. You can specify the dataset you want to process by setting the variable 'corpus_name' in the main function to appropriate values (e.g., 'DUC2001', 'DUC2002' or 'DUC2004'). The preprocessed data will be put in data/processed_data.
 
 ## Stage0: Generate Sample Summaries
@@ -96,5 +96,5 @@ and put them to summariser/jars
 This repository contains experimental software and is published for the sole purpose of giving additional background details on the respective publication.
 
 ## License
-* Apache License Version 2.0
+Apache License Version 2.0
 
