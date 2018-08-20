@@ -29,7 +29,7 @@ def remove_spaces_lines(text):
     Return:
     text: a string (New York N.Y is a city.)
     '''
-    text = re.sub(u'[\n\s\t_]+', ' ', text)
+    text = re.sub('[\n\s\t_]+', ' ', str(text))
     return text
 
 def text_normalization(text):

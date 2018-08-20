@@ -30,20 +30,17 @@ def writeSample(actions,reward,path):
 
 if __name__ == '__main__':
 
-    dataset = 'DUC2004'
+    dataset = 'DUC2004' #DUC2001, DUC2002, DUC2004
     language = 'english'
     summary_len = 100
 
-    summary_num = 10100
+    summary_num = 10001
     base_dir = os.path.join(SUMMARY_DB_DIR,dataset)
 
     reader = CorpusReader(PROCESSED_PATH)
     data = reader.get_data(dataset,summary_len)
 
     topic_cnt = 0
-    start = 50
-    end = 100
-    print('dataset: {}; start: {}; end: {}'.format(dataset,start,end-1))
 
     for topic, docs, models in data:
         topic_cnt += 1
@@ -51,17 +48,14 @@ if __name__ == '__main__':
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
         vec = Vectoriser(docs,summary_len)
-        if topic_cnt >= start and topic_cnt < end:
-            print('-----Generate samples for topic {}: {}-----'.format(topic_cnt,topic))
-            act_list, h_rewards, r_rewards = vec.sampleRandomReviews(summary_num,True,True,models)
+        print('-----Generate samples for topic {}: {}-----'.format(topic_cnt,topic))
+        act_list, h_rewards, r_rewards = vec.sampleRandomReviews(summary_num,True,True,models)
 
-            assert len(act_list) == len(h_rewards) == len(r_rewards)
+        assert len(act_list) == len(h_rewards) == len(r_rewards)
 
-            for ii in range(len(act_list)):
-                writeSample(act_list[ii],h_rewards[ii],os.path.join(dir_path,'heuristic'))
-                writeSample(act_list[ii],r_rewards[ii],os.path.join(dir_path,'rouge'))
-
-    print('dataset {}; total topic num: {}; start: {}; end: {}'.format(dataset,topic_cnt,start,end-1))
+        for ii in range(len(act_list)):
+            writeSample(act_list[ii],h_rewards[ii],os.path.join(dir_path,'heuristic'))
+            writeSample(act_list[ii],r_rewards[ii],os.path.join(dir_path,'rouge'))
 
 
 
