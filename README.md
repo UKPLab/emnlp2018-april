@@ -94,8 +94,6 @@ and put them to summariser/jars
     * rouge (upper bound, because reference summaries are not available during interaction)
     * read (read the rewards learnt in stage1)
 
-## Disclaimer
-
 ## License
 Apache License Version 2.0
 
