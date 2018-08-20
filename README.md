@@ -37,6 +37,8 @@ https://www.tu-darmstadt.de/
 
 Don't hesitate to send us an e-mail or report an issue, if something is broken (and it shouldn't be) or if you have further questions
 
+Disclaimer:
+> This repository contains experimental software and is published for the sole purpose of giving additional background details on the respective publication.
 
 
 # System Overview
@@ -93,7 +95,6 @@ and put them to summariser/jars
     * read (read the rewards learnt in stage1)
 
 ## Disclaimer
-This repository contains experimental software and is published for the sole purpose of giving additional background details on the respective publication.
 
 ## License
 Apache License Version 2.0
