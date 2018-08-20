@@ -1,5 +1,47 @@
 # APRIL: Active Preference ReInforcement Learning, for extractive multi-document summarisation.
 
+This project includes the source code accompanying the following paper:
+
+```
+@InProceedings{gao:2018:emnlp:april,
+  author    = {Yang Gao and Christian M. Meyer and Iryna Gurevych},
+  title     = {APRIL: Interactively Learning to Summarise by Combining Active Preference Learning and Reinforcement Learning},
+  booktitle = {Proceedings of the 2018 Conference on Conference on Empirical Methods in Natural Language Processing {(EMNLP)}},
+  month     = August,
+  year      = {2018},
+  address   = {Brussels, Belgium}
+}
+```
+
+> **Abstract:** We propose a method to perform automatic document summarisation
+without using reference summaries.
+Instead, our method interactively learns from users' \emph{preferences}.
+The merit of preference-based interactive summarisation is that
+preferences are easier for users to provide than reference summaries.
+Existing preference-based interactive learning methods
+suffer from high sample complexity, i.e.\ they need to interact with
+the oracle for many rounds to converge.
+In this work, we propose a new objective function,
+which enables us to leverage active learning, preference learning
+and reinforcement learning techniques to reduce the sample complexity.
+Both simulation and real-user experiments suggest
+that our method significantly advances the state of the art.
+
+
+Contact person: Yang Gao, gao@ukp.informatik.tu-darmstadt.de
+
+https://www.ukp.tu-darmstadt.de/
+
+https://www.tu-darmstadt.de/
+
+
+Don't hesitate to send us an e-mail or report an issue, if something is broken (and it shouldn't be) or if you have further questions
+
+
+
+# System Overview
+APRIL is an interactive document summarisation framework. Instead of learning from reference summaries, APRIL interacts with the users/oracles to obtain preferences, learns a ranking over all summaries from the preferences, and generates optimal summaries with respect to the learnt ranking.
+
 APRIL has three stages:
 * sample summaries (stage0): randomly generate some summaries and compute their rouge scores
 * active preference learning (stage1): actively query the orale for multiple rounds, collect preferences and learn a ranking over summaries from the preferences.
@@ -26,7 +68,7 @@ and put them to summariser/jars
 
 ## Download and Preprocess data
 * Download the DUC01/02/04 data from [the DUC website](https://duc.nist.gov/data.html) and extract the data to folder data.
-* Run summariser/data_processer/make_data.py. Each run of it can preprocess one dataset. You can specify the dataset you want to process by setting the variable 'corpus_name' in the main function to appropriate values (e.g., 'DUC2001', 'DUC2002' or 'DUC2004'). The preprocessed data will be put in data/processed_data.
+* Run summariser/data_processer/make_data.py. Each run preprocesses one dataset. You can specify the dataset you want to process by setting the variable 'corpus_name' in the main function to appropriate values (e.g., 'DUC2001', 'DUC2002' or 'DUC2004'). The preprocessed data will be put in data/processed_data.
 
 ## Stage0: Generate Sample Summaries
 * Run 'stage0_sample_summaries.py' will generate the samples
@@ -50,6 +92,9 @@ and put them to summariser/jars
     * rouge (upper bound, because reference summaries are not available during interaction)
     * read (read the rewards learnt in stage1)
 
+## Disclaimer
+This repository contains experimental software and is published for the sole purpose of giving additional background details on the respective publication.
 
-
+## License
+* Apache License Version 2.0
 
