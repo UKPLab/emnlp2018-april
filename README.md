@@ -10,21 +10,19 @@ APRIL has three stages:
 * Python3 (tested with Python 3.6 on Ubuntu 16.04 LTS)
 * install all packages in requirement.txt.
 
-## Installation
+    >> pip3 install -r requirements.txt
+
 * Download ROUGE package from the [link](https://www.isi.edu/licensed-sw/see/rouge/) and place it in the rouge directory
 
         >> mv RELEASE-1.5.5 rouge/
 
-
-* Install required python packages.
-
-        >> pip install -r requirements.txt
-
-3. Download the Standford Parser models and jars from the [link](https://nlp.stanford.edu/software/lex-parser.shtml)
+* Download the Standford Parser models and jars from the [link](https://nlp.stanford.edu/software/lex-parser.shtml)
 and put them to summariser/jars
 
 		>> mv englishPCFG.ser.gz germanPCFG.ser.gz summariser/jars/
 		>> mv stanford-parser.jar stanford-parser-3.6.0-models.jar summariser/jars/
+
+
 
 ## Implemented algorithms in stage2 (active preference learning)
 * random sampling + BT (in stage1_active_pref_learning.py, set querier_type to 'random'): randomly select two summaries to query the oracle in each interaction round; use the linear BT model to obtain the ranking
