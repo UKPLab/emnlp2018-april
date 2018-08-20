@@ -9,12 +9,14 @@ APRIL has three stages:
 ## Prerequisties
 * Python3 (tested with Python 3.6 on Ubuntu 16.04 LTS)
 * install all packages in requirement.txt.
-
-    >> pip3 install -r requirements.txt
+'''
+    pip3 install -r requirements.txt
+'''
 
 * Download ROUGE package from the [link](https://www.isi.edu/licensed-sw/see/rouge/) and place it in the rouge directory
-
-        >> mv RELEASE-1.5.5 rouge/
+'''
+    mv RELEASE-1.5.5 rouge/
+'''
 
 * Download the Standford Parser models and jars from the [link](https://nlp.stanford.edu/software/lex-parser.shtml)
 and put them to summariser/jars
