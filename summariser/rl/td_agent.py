@@ -5,7 +5,7 @@ from summariser.utils.corpus_reader import CorpusReader
 from summariser.vector.state_type import State
 from summariser.rouge.rouge import Rouge
 #from summariser.utils.summary_samples_reader import *
-from summariser.utils.misc import softmaxSample
+from summariser.utils.misc import softmaxSample, getSoftmaxList
 
 import numpy as np
 import random
@@ -47,6 +47,7 @@ class TDAgent:
             self.alpha = 0.001
 
             #find a new sample, using the softmax value
+            self.softmax_list = getSoftmaxList(reward_list,self.strict_para)
             idx = softmaxSample(reward_list,self.strict_para,self.softmax_list)
 
             # train the model for one episode

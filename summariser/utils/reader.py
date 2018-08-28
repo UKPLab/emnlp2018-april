@@ -13,18 +13,17 @@ def read_file(filename):
     with codecs.open(filename, 'r', 'utf-8', errors='ignore') as fp:
         return fp.read()
 
-def readSampleSummaries(dataset,topic):
-    summaries, ref_values = readSummaries(dataset,topic,'rouge')
-    summaries, heu_values = readSummaries(dataset,topic,'heuristic')
+def readSampleSummaries(dataset,topic,sample_num=9999):
+    summaries, ref_values = readSummaries(dataset,topic,'rouge',sample_num)
+    summaries, heu_values = readSummaries(dataset,topic,'heuristic',sample_num)
 
     return summaries, ref_values, heu_values
 
-def readSummaries(dataset,topic,reward_type='rouge'):
+def readSummaries(dataset,topic,reward_type,sample_num):
     path = os.path.join(SUMMARY_DB_DIR,dataset,topic,reward_type)
     summary_list = []
     value_list = []
     model_names = []
-    sample_num = 9999
 
     with open(path,'r') as ff:
         if reward_type == 'heuristic':

@@ -271,8 +271,8 @@ class StateLengthComputer():
 
 
 if __name__ == '__main__':
-    block_num = 5
-    base_num = 80
+    block_num = 6
+    base_num = 100
     sent_num = 400
     print('block num: {}; sentence num: {}; '
           'the summary of length 1 will have {}-dimension states.'.format(block_num, sent_num, base_num))

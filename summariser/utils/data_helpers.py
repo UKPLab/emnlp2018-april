@@ -210,6 +210,11 @@ def getTopNgrams(sentences, stemmer, language, stoplist, N=2, top=100):
                 ngram = key
         top_list.append(ngram)
         del ngram_list[ngram]
+
+    #for key in ngram_list:
+        #if ngram_list[key] >= highest_count:
+            #top_list.append(key)
+
     return top_list
 
 
@@ -228,7 +233,7 @@ def extract_ngrams_count(sentences, stemmer, language, stoplist, N=2):
     the output is a dictionary
     '''
     #TODO: I am not sure whether we should remove all stopwords or not; maybe try both settings
-    ngrams_count_dic= {}
+    ngrams_count_dic= OrderedDict()
     for i, sentence in enumerate(sentences):
 
         # for each ngram of words
@@ -264,6 +269,7 @@ def extract_ngrams_count(sentences, stemmer, language, stoplist, N=2):
             else:
                 ngrams_count_dic[ngram] = 1
     return ngrams_count_dic
+    #return sorted(ngrams_count_dic.items(), key=lambda x:x[1], reverse=True)
 
 
 

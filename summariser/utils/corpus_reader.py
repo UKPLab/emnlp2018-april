@@ -17,7 +17,7 @@ class CorpusReader(object):
         if summary_len:
             summaries = [model for model in docs if re.search("M\.%s\." % (summary_len), model)]
             docs = summaries
-        for doc_name in docs:
+        for doc_name in sorted(docs):
             filename = "%s/%s" % (path, doc_name)
             with codecs.open(filename, 'r', 'utf-8') as fp:
                 text = fp.read().splitlines()
@@ -41,7 +41,7 @@ class CorpusReader(object):
             models_directory_name = "summaries.parsed"
 
         dir_listing = os.listdir(corpus_base_dir)
-        for ctopic in dir_listing:
+        for ctopic in sorted(dir_listing):
             docs_path = path.join(corpus_base_dir, ctopic, docs_directory_name)
             summary_path = path.join(corpus_base_dir, ctopic, models_directory_name)
 

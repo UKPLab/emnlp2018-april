@@ -17,8 +17,10 @@ if __name__ == '__main__':
     #parameters
     rl_episode = 5000
     strict = 3.0
-    dataset = 'DUC2004'
+    dataset = 'DUC2001'
     reward_type = 'rouge' # rouge, heuristic, learnt
+    base_length = 500
+    block_num = 1
 
     # read documents and ref. summaries
     reader = CorpusReader(PROCESSED_PATH)
@@ -28,8 +30,9 @@ if __name__ == '__main__':
     all_result_dic = {}
     for topic,docs,models in data:
         topic_cnt += 1
+
         summaries, ref_values_dic, heuristic_values_list = readSampleSummaries(dataset,topic)
-        vec = Vectoriser(docs)
+        vec = Vectoriser(docs,base=base_length,block=block_num)
         #summary_vectors = vec.getSummaryVectors(summaries)
         rl_agent = TDAgent(vec,summaries,rl_episode,strict)
 
@@ -41,6 +44,8 @@ if __name__ == '__main__':
                 summary = rl_agent(ref_values_dic[model_name])
                 result = evaluateSummary(summary,model)
                 addResult(result_dic,result)
+                for metric in result:
+                    print('{} : {}'.format(metric,result[metric]))
         elif reward_type == 'heuristic':
             summary = rl_agent(heuristic_values_list)
             for model in models:
@@ -53,6 +58,5 @@ if __name__ == '__main__':
         print('\n=== RESULTS UNTIL TOPIC {}, EPISODE {} ===\n'.format(topic_cnt, rl_episode))
         for metric in all_result_dic:
             print('{} : {}'.format(metric, np.mean(all_result_dic[metric])))
-
 
 
