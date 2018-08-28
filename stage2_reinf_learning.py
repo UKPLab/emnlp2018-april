@@ -16,10 +16,10 @@ if __name__ == '__main__':
 
     #parameters
     rl_episode = 5000
-    strict = 3.0
+    strict = 5.0
     dataset = 'DUC2001'
     reward_type = 'rouge' # rouge, heuristic, learnt
-    base_length = 500
+    base_length = 300
     block_num = 1
 
     # read documents and ref. summaries
@@ -30,6 +30,7 @@ if __name__ == '__main__':
     all_result_dic = {}
     for topic,docs,models in data:
         topic_cnt += 1
+        print('\n---TOPIC: {}---'.format(topic))
 
         summaries, ref_values_dic, heuristic_values_list = readSampleSummaries(dataset,topic)
         vec = Vectoriser(docs,base=base_length,block=block_num)

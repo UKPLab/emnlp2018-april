@@ -4,20 +4,43 @@ import codecs
 
 sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__)))))
 import re, os
-
+from resources import DOC_SEQUENCE_PATH
 
 class CorpusReader(object):
     def __init__(self, base_path, parse_type=None):
         self.base_path = base_path
         self.parse_type=parse_type
 
+    def getDocs(self,path):
+        ele = path.split('/')
+        dataset = ele[-3]
+        topic = ele[-2]
+        docs = None
+
+        ff = open(DOC_SEQUENCE_PATH,'r')
+        for line in ff.readlines():
+            if '{};{}'.format(dataset,topic) in line:
+                docs = line.split(':')[1].split(';')
+                for ii in range(len(docs)):
+                    docs[ii] = docs[ii].strip()
+                return docs
+
+        ff.close()
+        if docs is None:
+            print('INVALID PATH: {}'.format(path))
+            exit(11)
+
     def load_processed(self, path, summary_len=None):
         data = []
-        docs = os.listdir(path)
-        if summary_len:
+
+        if summary_len is None:
+            docs = self.getDocs(path)
+        else:
+            docs = os.listdir(path)
             summaries = [model for model in docs if re.search("M\.%s\." % (summary_len), model)]
             docs = summaries
-        for doc_name in sorted(docs):
+
+        for doc_name in docs:
             filename = "%s/%s" % (path, doc_name)
             with codecs.open(filename, 'r', 'utf-8') as fp:
                 text = fp.read().splitlines()

@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02d55c21-d17d-4c77-ab46-4678a5e6c9ec" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/summariser/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/summariser/utils/get_doc_sequence.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources.py" afterPath="$PROJECT_DIR$/resources.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stage2_reinf_learning.py" afterPath="$PROJECT_DIR$/stage2_reinf_learning.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/summariser/rl/td_agent.py" afterPath="$PROJECT_DIR$/summariser/rl/td_agent.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/summariser/utils/corpus_reader.py" afterPath="$PROJECT_DIR$/summariser/utils/corpus_reader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/summariser/utils/data_helpers.py" afterPath="$PROJECT_DIR$/summariser/utils/data_helpers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/summariser/utils/reader.py" afterPath="$PROJECT_DIR$/summariser/utils/reader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/summariser/vector/state_type.py" afterPath="$PROJECT_DIR$/summariser/vector/state_type.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/summariser/vector/vector_generator.py" afterPath="$PROJECT_DIR$/summariser/vector/vector_generator.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="stage2_reinf_learning.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stage2_reinf_learning.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stage2_reinf_learning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="26" column="34" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+            <state relative-caret-position="257">
+              <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -31,14 +31,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="td_agent.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summariser/rl/td_agent.py">
+      <file leaf-file-name="corpus_reader.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/summariser/utils/corpus_reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="167">
+              <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python3.6/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="896" column="0" lean-forward="false" selection-start-line="896" selection-start-column="0" selection-end-line="896" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,8 +54,18 @@
       <file leaf-file-name="vector_generator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/summariser/vector/vector_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
+            <state relative-caret-position="297">
+              <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="state_type.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/summariser/vector/state_type.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-45">
+              <caret line="88" column="17" lean-forward="false" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -79,17 +97,18 @@
         <option value="$PROJECT_DIR$/summariser/data_processer/make_data.py" />
         <option value="$PROJECT_DIR$/stage0_sample_summaries.py" />
         <option value="$PROJECT_DIR$/summariser/data_processer/corpus_cleaner.py" />
-        <option value="$PROJECT_DIR$/resources.py" />
         <option value="$PROJECT_DIR$/NOTICE.txt" />
         <option value="$PROJECT_DIR$/LICENSE.txt" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/summariser/rl/td_agent.py" />
-        <option value="$PROJECT_DIR$/summariser/utils/corpus_reader.py" />
         <option value="$PROJECT_DIR$/summariser/utils/reader.py" />
         <option value="$PROJECT_DIR$/summariser/utils/data_helpers.py" />
         <option value="$PROJECT_DIR$/summariser/vector/state_type.py" />
-        <option value="$PROJECT_DIR$/summariser/vector/vector_generator.py" />
         <option value="$PROJECT_DIR$/stage2_reinf_learning.py" />
+        <option value="$PROJECT_DIR$/summariser/vector/vector_generator.py" />
+        <option value="$PROJECT_DIR$/get_doc_sequence.py" />
+        <option value="$PROJECT_DIR$/resources.py" />
+        <option value="$PROJECT_DIR$/summariser/utils/corpus_reader.py" />
       </list>
     </option>
   </component>
@@ -130,7 +149,19 @@
             <path>
               <item name="emnlp2018-april" type="b2602c69:ProjectViewProjectNode" />
               <item name="emnlp2018-april" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="processed_data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emnlp2018-april" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emnlp2018-april" type="462c0819:PsiDirectoryNode" />
               <item name="summariser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emnlp2018-april" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emnlp2018-april" type="462c0819:PsiDirectoryNode" />
+              <item name="summariser" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -145,6 +176,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/summariser/utils" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -161,19 +193,36 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.stage2_reinf_learning">
-    <configuration name="corpus_cleaner" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="corpus_reader" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/summariser/data_processer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/summariser/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="GPPRL-DocSum" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/summariser/data_processer/corpus_cleaner.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/summariser/utils/corpus_reader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="get_doc_sequence" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GPPRL-DocSum" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/summariser/utils/get_doc_sequence.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -192,23 +241,6 @@
       <module name="GPPRL-DocSum" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/summariser/data_processer/make_data.py" />
       <option name="PARAMETERS" value="-d DUC2001 -p ../../data -a parse -l english" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="stage0_sample_summaries" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GPPRL-DocSum" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stage0_sample_summaries.py" />
-      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
@@ -248,18 +280,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.make_data" />
-      <item index="1" class="java.lang.String" itemvalue="Python.corpus_cleaner" />
-      <item index="2" class="java.lang.String" itemvalue="Python.stage0_sample_summaries" />
-      <item index="3" class="java.lang.String" itemvalue="Python.stage2_reinf_learning" />
-      <item index="4" class="java.lang.String" itemvalue="Python.state_type" />
+      <item index="1" class="java.lang.String" itemvalue="Python.stage2_reinf_learning" />
+      <item index="2" class="java.lang.String" itemvalue="Python.state_type" />
+      <item index="3" class="java.lang.String" itemvalue="Python.get_doc_sequence" />
+      <item index="4" class="java.lang.String" itemvalue="Python.corpus_reader" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.stage2_reinf_learning" />
-        <item index="1" class="java.lang.String" itemvalue="Python.state_type" />
-        <item index="2" class="java.lang.String" itemvalue="Python.make_data" />
-        <item index="3" class="java.lang.String" itemvalue="Python.corpus_cleaner" />
-        <item index="4" class="java.lang.String" itemvalue="Python.stage0_sample_summaries" />
+        <item index="1" class="java.lang.String" itemvalue="Python.corpus_reader" />
+        <item index="2" class="java.lang.String" itemvalue="Python.get_doc_sequence" />
+        <item index="3" class="java.lang.String" itemvalue="Python.state_type" />
+        <item index="4" class="java.lang.String" itemvalue="Python.make_data" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +316,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38918918" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38918918" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -317,12 +349,17 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/stage2_reinf_learning.py</url>
-          <line>36</line>
-          <option name="timeStamp" value="22" />
+          <url>file://$PROJECT_DIR$/summariser/utils/get_doc_sequence.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/summariser/utils/corpus_reader.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="24" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -454,6 +491,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -479,14 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="52" lean-forward="false" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NOTICE.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -505,6 +535,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
           <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -548,30 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/summariser/utils/corpus_reader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/summariser/utils/reader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/summariser/utils/data_helpers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="599">
@@ -580,39 +587,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/summariser/utils/reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-819">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summariser/utils/DocsSequence.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summariser/utils/get_doc_sequence.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="67" lean-forward="false" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="896" column="0" lean-forward="false" selection-start-line="896" selection-start-column="0" selection-end-line="896" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summariser/vector/vector_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/summariser/vector/state_type.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4842">
-          <caret line="279" column="30" lean-forward="false" selection-start-line="279" selection-start-column="30" selection-end-line="279" selection-end-column="30" />
+        <state relative-caret-position="-45">
+          <caret line="88" column="17" lean-forward="false" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/summariser/rl/td_agent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="176">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/summariser/vector/vector_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stage2_reinf_learning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="26" column="34" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        <state relative-caret-position="257">
+          <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summariser/utils/corpus_reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
