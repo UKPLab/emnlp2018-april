@@ -107,7 +107,8 @@ class Vectoriser:
         sent_list = []
         for sent in self.sentences:
             sent_list.append(sent.untokenized_form)
-        self.top_ngrams_list = getTopNgrams(sent_list, self.stemmer, self.language,
+        #random.shuffle(sent_list)
+        self.top_ngrams_list = getTopNgrams(sorted(sent_list), self.stemmer, self.language,
                                             self.stoplist, 2, self.top_ngrams_num)
 
 
