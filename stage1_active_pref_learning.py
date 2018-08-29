@@ -1,6 +1,6 @@
 from summariser.oracle.lno_ref_values import SimulatedUser
 from summariser.utils.corpus_reader import CorpusReader
-from resources import PROCESSED_PATH
+from resources import PROCESSED_PATH, LEARNT_RANKER_PATH
 from summariser.utils.reader import readSampleSummaries
 from summariser.vector.vector_generator import Vectoriser
 from summariser.utils.evaluator import evaluateReward
@@ -9,14 +9,35 @@ from summariser.querier.gibbs_querier import GibbsQuerier
 from summariser.querier.uncertainty_querier import UncQuerier
 
 import numpy as np
+import os
+
+
+def writeRanker(weights,dataset,topic,model,inter_round,q_type,post_w):
+    if not os.path.isdir(os.path.join(LEARNT_RANKER_PATH,dataset)):
+        os.makedirs(os.path.join(LEARNT_RANKER_PATH,dataset))
+
+    if not os.path.isdir(os.path.join(LEARNT_RANKER_PATH,dataset,topic)):
+        os.makedirs(os.path.join(LEARNT_RANKER_PATH,dataset,topic))
+
+    out_file = os.path.join(LEARNT_RANKER_PATH,dataset,topic,
+                            'model{}-round{}-query{}-postWeight{}'.format(model,inter_round,q_type.upper(),post_w))
+
+    str = ''
+    for ww in weights:
+        str += '{}\n'.format(ww)
+
+    ff = open(out_file,'w')
+    ff.write(str)
+    ff.close()
 
 if __name__ == '__main__':
 
     ### parameters
     inter_round = 100
     dataset = 'DUC2001' # DUC2001, DUC2002, DUC2004
-    querier_type = 'gibbs' # gibbs, random, unc
+    querier_type = 'random' # gibbs, random, unc
     posterior_weight = 0.5 # trade off between the heuristic rewards and the pref-learnt rewards
+    write_learnt_reward = True
 
     ### read documents and ref. summaries
     reader = CorpusReader(PROCESSED_PATH)
@@ -64,7 +85,8 @@ if __name__ == '__main__':
                 else:
                     all_result_dic[metric] = [metrics_dic[metric]]
 
-            #TODO: writeReward(querier.getReward(), model_name)
+            if write_learnt_reward:
+                writeRanker(querier.reward_learner.weights, dataset, topic, model_name, inter_round, querier_type, posterior_weight)
 
         print('\n=== RESULTS UNTIL TOPIC {}, QUERIER {}, INTER ROUND {} ===\n'.format(
             topic_cnt, querier_type.upper(), inter_round

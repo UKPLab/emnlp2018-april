@@ -86,13 +86,14 @@ and put them to summariser/jars
     * random sampling + BT (set querier_type to 'random'): randomly select two summaries to query the oracle in each interaction round; use the linear BT model to obtain the ranking
     * gibbs distribution + BT (set querier_type to 'gibbs'): select a relative good and a relatively bad summary to query the user in each round; ranking is obtained using the same linear BT method.
     * uncertainty sampling + BT (set querier_type to 'unc'): estimate the uncertainty level of each summary in the sampled summary pool, select the most uncertain pair to query and use BT to obtain the ranking.
+* To write the learnt ranker for use in Stage2, you can turn on the writing functionality by giving 'write_learnt_reward' True. The learnt ranker will be written to directory 'learnt_ranker'.
 
 ## Stage2: Reinforcement Learning
 * Since TD performs much better than LSTD, in the current implementation only TD is included. 
 * choose reward type: 
     * hueristic (baseline, no interaction)
     * rouge (upper bound, because reference summaries are not available during interaction)
-    * read (read the rewards learnt in stage1)
+    * learnt (using the ranker learned in stage1 to give rewards). If you go for this option, you also need to sepcify which learnt ranker you want to use by setting 'learnt_rank_setting' to appropriate values. Example settings can be found in the source code.
 
 ## License
 Apache License Version 2.0

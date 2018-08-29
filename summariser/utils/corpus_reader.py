@@ -33,10 +33,12 @@ class CorpusReader(object):
     def load_processed(self, path, summary_len=None):
         data = []
 
-        docs = os.listdir(path)
         if summary_len is not None:
+            docs = os.listdir(path)
             summaries = [model for model in docs if re.search("M\.%s\." % (summary_len), model)]
             docs = summaries
+        else:
+            docs = self.getDocs(path)
 
         for doc_name in docs:
             filename = "%s/%s" % (path, doc_name)
