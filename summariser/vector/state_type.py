@@ -164,13 +164,14 @@ class State:
         draft_index_list = self.historical_actions+[new_sent_id]
         return self.getStateVector(temp_draft_summary_list,draft_index_list,top_ngrams,sentences)
 
-    def removeOverlengthSents(self, sents):
+    def removeOverlengthSents(self, sents, production):
         new_avai_acts = [0]
         for sent_id in self.available_sents:
             if sent_id == 0:
                 continue
-            if len(sents[sent_id-1].untokenized_form.split(' ')) > self.sum_token_length-self.draft_summary_length:
-                #self.available_sents.remove(sent_id)
+            if not production and len(sents[sent_id-1].untokenized_form.split(' ')) > self.sum_token_length-self.draft_summary_length:
+                continue
+            elif production and len(sents[sent_id-1].untokenized_form.split(' ')) > int(1.2*self.sum_token_length)-self.draft_summary_length:
                 continue
             else:
                 new_avai_acts.append(sent_id)
@@ -178,14 +179,14 @@ class State:
         del new_avai_acts
 
 
-    def updateState(self, new_sent_id, sents, read=False):
+    def updateState(self, new_sent_id, sents, read=False, production=False):
         self.draft_summary_list.append(sents[new_sent_id].untokenized_form)
         self.historical_actions.append(new_sent_id)
         self.draft_summary_length += len(sents[new_sent_id].untokenized_form.split(' '))
         if not read:
             self.available_sents.remove(new_sent_id+1)
-            self.removeOverlengthSents(sents)
-            if self.draft_summary_length > self.sum_token_length:
+            self.removeOverlengthSents(sents,production)
+            if not production and self.draft_summary_length > self.sum_token_length:
                 self.available_sents = [0]
                 self.terminal_state = 1
                 print('overlength! should not happen')
@@ -202,8 +203,9 @@ class State:
         return [R1, R2, R3, R4, RL, RSU]
 
     def getTerminalReward(self, sentences, sentences_stemmed_aggreate, sent2tokens, sim_scores):
-        assert self.draft_summary_length <= self.sum_token_length
+        # assert self.draft_summary_length <= self.sum_token_length
         # print('summary: \n'+' ||| '.join(self.draft_summary_list))
+
         relatedness_score = 0
         redundant_score = 0
         for i in range(len(self.historical_actions)):

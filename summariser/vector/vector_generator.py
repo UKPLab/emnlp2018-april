@@ -39,9 +39,10 @@ class Vectoriser:
                     continue
                 if new_id > 0 and len(self.sentences[new_id-1].untokenized_form.split(' ')) > self.sum_token_length:
                     continue
-                state.updateState(new_id-1,self.sentences)
+                state.updateState(new_id-1,self.sentences,production=True)
             actions = state.historical_actions
             act_list.append(actions)
+            print('summary length: {}'.format(state.draft_summary_length))
 
             if heuristic_reward:
                 rew = state.getTerminalReward(self.sentences,self.stemmed_sentences_list,self.sent2tokens,self.sim_scores)
@@ -107,7 +108,7 @@ class Vectoriser:
         sent_list = []
         for sent in self.sentences:
             sent_list.append(sent.untokenized_form)
-        self.top_ngrams_list = getTopNgrams(sent_list, self.stemmer, self.language,
+        self.top_ngrams_list = getTopNgrams(sorted(sent_list), self.stemmer, self.language,
                                             self.stoplist, 2, self.top_ngrams_num)
 
 

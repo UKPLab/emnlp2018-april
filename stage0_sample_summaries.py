@@ -30,7 +30,7 @@ def writeSample(actions,reward,path):
 
 if __name__ == '__main__':
 
-    dataset = 'DUC2004' #DUC2001, DUC2002, DUC2004
+    dataset = 'DUC2001' #DUC2001, DUC2002, DUC2004
     language = 'english'
     summary_len = 100
 
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
         for ii in range(len(act_list)):
             writeSample(act_list[ii],h_rewards[ii],os.path.join(dir_path,'heuristic'))
-            writeSample(act_list[ii],r_rewards[ii],os.path.join(dir_path,'rouge'))
+            #writeSample(act_list[ii],r_rewards[ii],os.path.join(dir_path,'rouge'))
 
 
 

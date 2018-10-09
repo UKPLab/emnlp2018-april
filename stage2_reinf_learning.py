@@ -33,8 +33,8 @@ if __name__ == '__main__':
     rl_episode = 5000
     strict = 5.0
     dataset = 'DUC2001'
-    reward_type = 'heuristic' # rouge, heuristic, learnt
-    base_length = 200
+    reward_type = 'rouge' # rouge, heuristic, learnt
+    base_length = 400
     block_num = 1
     learnt_rank_setting = None # for example: 'round100-queryRANDOM-postWeight0.5'
 
@@ -73,10 +73,8 @@ if __name__ == '__main__':
             for model in models:
                 result = evaluateSummary(summary,model)
                 addResult(all_result_dic,result)
-        else:
-            pass #TODO, read learnt rewards to do RL
 
-        print('\n=== RESULTS UNTIL TOPIC {}, EPISODE {} ===\n'.format(topic_cnt, rl_episode))
+        print('\n=== RESULTS UNTIL TOPIC {}, EPISODE {}, base length 400 ===\n'.format(topic_cnt, rl_episode))
         for metric in all_result_dic:
             print('{} : {}'.format(metric, np.mean(all_result_dic[metric])))
 
