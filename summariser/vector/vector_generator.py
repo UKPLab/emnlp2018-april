@@ -42,7 +42,7 @@ class Vectoriser:
                 state.updateState(new_id-1,self.sentences,production=True)
             actions = state.historical_actions
             act_list.append(actions)
-            print('summary length: {}'.format(state.draft_summary_length))
+            #print('summary length: {}'.format(state.draft_summary_length))
 
             if heuristic_reward:
                 rew = state.getTerminalReward(self.sentences,self.stemmed_sentences_list,self.sent2tokens,self.sim_scores)
